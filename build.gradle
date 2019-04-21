@@ -1,0 +1,41 @@
+buildscript {
+    ext {
+        kotlinVersion = "1.3.30"
+        springBootVersion = "2.1.4.RELEASE"
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: "kotlin"
+
+    compileKotlin {
+        kotlinOptions {
+            freeCompilerArgs = ['-Xjsr305=strict']
+            jvmTarget = '1.8'
+        }
+    }
+
+    compileTestKotlin {
+        kotlinOptions {
+            freeCompilerArgs = ['-Xjsr305=strict']
+            jvmTarget = '1.8'
+        }
+    }
+}
+
+group = "io.github.inoutch"
+sourceCompatibility = "1.8"
+

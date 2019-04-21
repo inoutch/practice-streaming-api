@@ -1,0 +1,13 @@
+apply plugin: "application"
+
+mainClassName = "io.github.inoutch.grpcclient.GRpcClient"
+
+dependencies {
+    implementation project(":grpc-common")
+    
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+
+    implementation "io.grpc:grpc-okhttp:1.20.0"
+    implementation "io.grpc:grpc-protobuf-lite:1.20.0"
+    implementation "io.grpc:grpc-stub:1.20.0"
+}

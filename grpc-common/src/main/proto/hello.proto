@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+option java_package = "io.github.inoutch.grpccommon";
+
+service Hello {
+    rpc Hello (HelloRequest) returns (HelloResponse) {
+    }
+}
+
+message HelloRequest {
+    string request = 1;
+}
+
+message HelloResponse {
+    string response = 2;
+}
